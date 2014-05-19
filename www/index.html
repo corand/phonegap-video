@@ -17,23 +17,33 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
+<html style="height:100%">
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link href="video-js.min.css" rel="stylesheet">
+        <script src="video.js"></script>
         <title>Hello World</title>
     </head>
     <body style="height:100%">
-        <video autoplay loop style="width:100%; height:100%">
-            <source src='movie.mov' type='video/mov;'/>
+        <video id="example_video_1" class="video-js vjs-default-skin vjs-big-play-centered"
+          controls preload="auto" width="100%" height="100%"
+          poster="http://video-js.zencoder.com/oceans-clip.png"
+          data-setup='{"example_option":true}'>
+         <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+         <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
         </video>
+
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+        </script>
+        <script type="text/javascript">
+        document.createElement('video');document.createElement('audio');document.createElement('track');
         </script>
     </body>
 </html>
